@@ -1,1 +1,1 @@
-# learning go with cf problems
+# Solving competitve programming problems using golang
