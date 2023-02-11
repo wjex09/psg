@@ -10,29 +10,12 @@ var (
 	in  = bufio.NewReader(os.Stdin)
 	out = bufio.NewWriter(os.Stdout)
 )
+ 
+const mod = 998244353
+
 
 func solve() {
-	var n, m, d int
-	fmt.Fscan(in, &n, &m, &d)
-	p := make([]int, n+1)
-	pos := make([]int, n+1)
-	a := make([]int, m)  
-	ans := 1000000007
-	for i := 1; i <= n; i++ { 
-		fmt.Fscan(in, &p[i])  
-		pos[p[i]] = i 
-	} 
 
-	for i := 0; i < m; i++ {
-		fmt.Fscan(in, &a[i]) 
-		if(i>0){
-			ans = min(ans,pos[a[i]]-pos[a[i-1]]) 
-			if(d < n-1){
-				ans = min(ans, pos[a[i-1]] - pos[a[i]] + d + 1)
-			}
-		}
-	} 
-	fmt.Println(max(0,ans))
 }
 
 func main() {
@@ -42,7 +25,7 @@ func main() {
 	for i := 0; i < t; i++ {
 		solve()
 	}
-} 
+}
 
 type Signed interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64
@@ -84,3 +67,4 @@ func max[T Ordered](x T, value ...T) T{
 	} 
 	return ret
 }
+
