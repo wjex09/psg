@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
+	"os" 
 )
 
 var (
@@ -22,17 +22,21 @@ func sum (x int)int {
 		return acc
 } 
 
+func abs (x ,y int) int{
+	if(x<y) {return (x-y)*-1 }
+	return x - y	
+}
 func solve() {
 	var n int 
 	fmt.Fscan(in,&n)	
 	x := n/2
 	y := n-x 
-	for i:=1 ; i < mod ; i*=10{
-		dx,dy := x/i%10, y/i%10 
+	for i:=1 ; i < 100000000 ; i*=10{
+		dx,dy := x / i % 10, y / i % 10 
 		for j:=0 ; j < dx && j < 9 - dy ; j++{
-			if x - y > 1{
+			if abs(sum(x),sum(y)) > 1{
 				x -= i
-				y -= i
+				y += i
 			} else { break }
 		}
 	} 
