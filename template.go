@@ -12,17 +12,7 @@ var (
 )
 
 func solve() {
-	var n, m, d int
-	fmt.Fscan(in, &n, &m, &d)
-	p := make([]int, n)
-	a := make([]int, m)
-	for i := 0; i < n; i++ {
-		fmt.Fscan(in, &p[i])
-	}
-	for i := 0; i < m; i++ {
-		fmt.Fscan(in, &a[i])
-	}
-	//fmt.Println(p, a)
+
 }
 
 func main() {
